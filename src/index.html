@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pro Search</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white">
+
+<!-- Navbar -->
+<nav class="bg-white dark:bg-gray-800 shadow-lg p-4 flex justify-between items-center">
+  <a href="index.html" class="text-xl font-bold">🔍 Pro Search</a>
+  <button onclick="toggleDarkMode()" class="p-2 bg-gray-200 dark:bg-gray-600 rounded">🌙</button>
+</nav>
+
+<!-- Search Section -->
+<div class="flex flex-col items-center mt-20">
+  <h1 class="text-4xl font-bold mb-4">Search the Web</h1>
+  <div class="flex w-full max-w-md">
+    <input id="searchQuery" class="w-full p-3 rounded-l-lg border border-gray-300 focus:ring-2 focus:ring-blue-500" placeholder="Type something...">
+    <button onclick="performSearch()" class="bg-blue-600 text-white px-4 rounded-r-lg hover:bg-blue-700">🔍</button>
+  </div>
+  <p class="mt-4 text-gray-600">
+    <a href="about.html" class="underline hover:text-blue-500">About</a> |
+    <a href="contact.html" class="underline hover:text-blue-500">Contact</a>
+  </p>
+</div>
+
+<!-- Footer with Social Links -->
+<footer class="mt-16 p-4 bg-white dark:bg-gray-800 text-center text-gray-700 dark:text-gray-300">
+  <p>Follow me:</p>
+  <div class="flex justify-center space-x-6 mt-2">
+    <a href="https://www.linkedin.com/in/shivendra-mishra-3788a8234/" target="_blank" class="hover:text-blue-500">🔗 LinkedIn</a>
+    <a href="https://github.com/Shivendra1233" target="_blank" class="hover:text-gray-900 dark:hover:text-gray-200">💻 GitHub</a>
+    <a href="https://www.instagram.com/shivendramishra.up/" target="_blank" class="hover:text-pink-500">📸 Instagram</a>
+  </div>
+  <p class="mt-2 text-sm">&copy; 2025 Pro Search. Made by <b>Shivendra Mishra</b></p>
+</footer>
+
+<script>
+  function performSearch() {
+    let query = document.getElementById("searchQuery").value;
+    if (query) {
+      localStorage.setItem("lastSearch", query);
+      window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+    }
+  }
+
+  function toggleDarkMode() {
+    document.body.classList.toggle("dark");
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Engine</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white">
+
+<nav class="bg-white dark:bg-gray-800 shadow-lg p-4 flex justify-between items-center">
+  <a href="index.html" class="text-xl font-bold">🔍 Pro Search</a>
+  <button onclick="toggleDarkMode()" class="p-2 bg-gray-200 dark:bg-gray-600 rounded">🌙</button>
+</nav>
+
+<div class="container mx-auto p-6">
+  <h1 class="text-2xl font-bold">Search Results for: <span id="query"></span></h1>
+
+  <!-- Definition Section -->
+  <div id="definition" class="mt-4 p-4 bg-white dark:bg-gray-800 rounded shadow"></div>
+
+  <!-- Image Section -->
+  <div id="imageResult" class="mt-4 text-center"></div>
+
+  <!-- Search Results -->
+  <div class="mt-6">
+    <h2 class="text-xl font-bold mb-4">Top 10 Links</h2>
+    <div id="results" class="space-y-4"></div>
+  </div>
+
+  <!-- Image Search Results -->
+  <div id="imageResults" class="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"></div>
+</div>
+
+<script src="api.js"></script>
+</body>
+</html>
