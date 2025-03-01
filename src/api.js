@@ -1,5 +1,4 @@
-const API_KEY = "AIzaSyA3u6blFCET4MBn9Ic_7XDQdTgqwvKILzI";
-const CX = "b7816eb4da786453e";
+
 async function searchGoogle() {
     let query = new URLSearchParams(window.location.search).get('q');
     document.getElementById("query").innerText = query;
